@@ -17,10 +17,11 @@ func ProvideRouter(appConfig *config.AppConfig, authHandler handler.AuthHandler,
 
 	g := r.Group("api/v1")
 	{
-		g.GET("/token", authHandler.FetchToken)
-		g.GET("/users", userHandler.ListUsers)
 		g.POST("/users/signup", authHandler.Signup)
 		g.POST("/users/login", authHandler.Login)
+
+		g.GET("/users", userHandler.ListUsers)
+		g.GET("/users/:id", userHandler.FetchUser)
 	}
 
 	return r, nil
