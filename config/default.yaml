@@ -1,10 +1,10 @@
 app:
   serviceName: "golang-jwt-auth"
   host: "0.0.0.0"
-  port: ${APP_PORT}
+  port: 8083
 rateLimit:
-  rateLimitEnabled: ${RATE_LIMIT_ENABLED}
-  rateLimitCount: ${RATE_LIMIT_COUNT}
-  rateLimitPeriodInMinutes: ${RATE_LIMIT_PERIOD_IN_MIN}
-  rateLimitCleanupIntervalInSeconds: ${RATE_LIMIT_CLEANUP_INTERVAL_IN_SEC}
-  rateLimitWaitPeriodInSeconds: ${RATE_LIMIT_WAIT_INTERVAL_IN_SEC}
+  rateLimitEnabled: true
+  rateLimitCount: 10
+  rateLimitPeriodInMinutes: 1
+  rateLimitCleanupIntervalInSeconds: 180
+  rateLimitWaitPeriodInSeconds: 180
