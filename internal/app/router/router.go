@@ -15,10 +15,12 @@ func ProvideRouter(appConfig *config.AppConfig, authHandler handler.AuthHandler,
 	r.Use(gzip.Gzip(gzip.DefaultCompression))
 	r.Use(ginTrace.Middleware(appConfig.GetServerConfig().ServiceName))
 
-	g := r.Group("api/pe/v1")
+	g := r.Group("api/v1")
 	{
 		g.GET("/token", authHandler.FetchToken)
 		g.GET("/users", userHandler.ListUsers)
+		g.POST("/users/signup", authHandler.Signup)
+		g.POST("/users/login", authHandler.Login)
 	}
 
 	return r, nil
