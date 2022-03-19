@@ -5,13 +5,12 @@ package di
 
 import (
 	"context"
+	"github.com/google/wire"
 	"github.com/hiteshrepo/golang-jwt-auth/internal/app"
 	"github.com/hiteshrepo/golang-jwt-auth/internal/app/handler"
 	"github.com/hiteshrepo/golang-jwt-auth/internal/app/router"
 	"github.com/hiteshrepo/golang-jwt-auth/internal/pkg/config"
 	"github.com/hiteshrepo/golang-jwt-auth/internal/pkg/rate_limiter"
-	"github.com/google/wire"
-
 )
 
 var configSet = wire.NewSet(
